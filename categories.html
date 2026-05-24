@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Job Categories — JobVault Zambia</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+#cats-section{background:var(--deep);min-height:60vh;}
+.cat-card-lg{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;display:flex;flex-direction:column;gap:.7rem;transition:all .2s;cursor:pointer;text-decoration:none;}
+.cat-card-lg:hover{border-color:var(--teal);background:rgba(40,207,200,.05);transform:translateY(-3px);}
+.cat-icon-lg{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;}
+.cat-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;}
+.cat-desc{font-size:.82rem;color:var(--soft);line-height:1.6;}
+.cat-meta{display:flex;justify-content:space-between;align-items:center;margin-top:.5rem;}
+.cat-count-lg{font-size:.82rem;font-weight:600;color:var(--teal);}
+.cat-arrow-lg{color:var(--teal);display:flex;opacity:0;transition:opacity .2s,transform .2s;}
+.cat-card-lg:hover .cat-arrow-lg{opacity:1;transform:translateX(4px);}
+.cats-grid-lg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-tag">Explore By Field</div>
+    <h1>Browse <em>Categories</em></h1>
+    <p>Find opportunities across every industry and discipline.</p>
+  </div>
+</div>
+
+<section id="cats-section">
+  <div class="cats-grid-lg" id="catsGrid"></div>
+</section>
+
+<footer id="site-footer"></footer>
+<div id="modal-placeholder"></div>
+<div id="toast-placeholder"></div>
+
+<script src="js/shared.js"></script>
+<script>
+const CAT_DESCS={
+  "Software Engineering":"Frontend, backend, full-stack, and systems engineering roles across all major stacks.",
+  "Design & UX":"Product designers, UX researchers, visual designers, and creative directors.",
+  "Data & Analytics":"Data analysts, scientists, engineers, and BI specialists.",
+  "Healthcare":"Clinical, medical, health tech, and administration positions.",
+  "Finance & Accounting":"Accountants, analysts, auditors, and financial managers.",
+  "Marketing & Growth":"Digital marketers, content creators, SEO, and growth hackers.",
+  "AI & Machine Learning":"ML engineers, data scientists, and AI researchers.",
+  "Cybersecurity":"Security analysts, ethical hackers, and information security officers.",
+  "Product Management":"Product managers, owners, and strategy leads.",
+  "Cloud & DevOps":"DevOps engineers, SREs, and cloud architects.",
+  "Mobile Development":"iOS, Android, and React Native developers.",
+  "Education & Training":"Teachers, trainers, curriculum designers, and e-learning specialists.",
+};
+
+document.getElementById('catsGrid').innerHTML=CATEGORIES.map(c=>`
+  <a href="jobs.html?q=${encodeURIComponent(c.name)}" class="cat-card-lg fade-in">
+    <div class="cat-icon-lg" style="background:${c.iconBg};color:${c.iconColor}">${IC[c.iconKey]||''}</div>
+    <div class="cat-title">${c.name}</div>
+    <div class="cat-desc">${CAT_DESCS[c.name]||''}</div>
+    <div class="cat-meta">
+      <span class="cat-count-lg">${c.count}</span>
+      <span class="cat-arrow-lg">${IC.arrowRight}</span>
+    </div>
+  </a>`).join('');
+
+renderNav('Categories');
+renderFooter();
+renderModal();
+renderToast();
+initNav();
+initScrollFade();
+</script>
+</body>
+</html>

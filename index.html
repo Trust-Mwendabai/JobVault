@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>JobVault — Find Your Next Role in Zambia</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 5% 60px;position:relative;overflow:hidden;}
+.hero-grid-bg{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(40,207,200,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(40,207,200,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);}
+.hero-glow{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(240,168,64,.12) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(240,168,64,.12);border:1px solid rgba(240,168,64,.3);color:var(--gold);font-size:.78rem;font-weight:600;letter-spacing:.08em;padding:.35rem 1rem;border-radius:99px;margin-bottom:1.5rem;position:relative;z-index:1;animation:fadeUp .6s ease both;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
+.hero-title{font-family:var(--serif);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;line-height:1.08;color:var(--text);margin-bottom:1.2rem;position:relative;z-index:1;animation:fadeUp .6s .1s ease both;}
+.hero-title em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:var(--soft);max-width:520px;margin:0 auto 2.5rem;position:relative;z-index:1;animation:fadeUp .6s .2s ease both;}
+.hero-search{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;width:100%;max-width:720px;position:relative;z-index:1;animation:fadeUp .6s .3s ease both;}
+.hero-search input{flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);color:var(--text);padding:.85rem 1.2rem;border-radius:var(--radius);font-family:var(--sans);font-size:.95rem;outline:none;transition:border-color .2s;}
+.hero-search input::placeholder{color:var(--muted);}
+.hero-search input:focus{border-color:var(--teal);}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem;position:relative;z-index:1;animation:fadeUp .6s .5s ease both;}
+.stat{text-align:center;}
+.stat-num{font-family:var(--serif);font-size:2rem;color:var(--teal);font-weight:700;}
+.stat-label{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+/* FEATURED */
+#featured{background:var(--navy);}
+.featured-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
+.featured-card{background:linear-gradient(135deg,var(--card),#1a2236);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.featured-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.featured-accent{position:absolute;top:-30px;right:-30px;width:90px;height:90px;border-radius:50%;opacity:.15;}
+.feat-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.feat-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:.4rem;}
+.feat-company{font-size:.82rem;color:var(--muted);margin-bottom:.9rem;}
+.feat-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem;}
+.tag{font-size:.7rem;background:var(--border);color:var(--soft);padding:.2rem .6rem;border-radius:4px;}
+.feat-salary{font-size:.88rem;font-weight:600;color:var(--green);}
+/* QUICK CATS */
+#quick-cats{background:var(--deep);}
+.qcat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+.qcat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;display:flex;align-items:center;gap:.9rem;transition:all .2s;cursor:pointer;}
+.qcat-card:hover{border-color:var(--teal);background:rgba(40,207,200,.05);}
+.qcat-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.qcat-name{font-weight:600;font-size:.88rem;}
+.qcat-count{font-size:.72rem;color:var(--muted);}
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,#0d1a2e,#1a2236);border:1px solid var(--border);border-radius:16px;padding:3rem;text-align:center;margin:0 5% 80px;}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);margin-bottom:.75rem;}
+.cta-banner h2 span{color:var(--gold);}
+.cta-banner p{color:var(--soft);margin-bottom:2rem;}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+@media(max-width:640px){.hero-search{flex-direction:column;align-items:stretch;}.btn-primary{width:100%;justify-content:center;}.hero-stats{gap:1.5rem;}.cta-banner{padding:2rem 1.5rem;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-badge"><span class="badge-dot"></span> New roles added today</div>
+  <h1 class="hero-title">Find Work That<br>Truly <em>Matters</em></h1>
+  <p class="hero-sub">Search thousands of curated job listings across industries, locations, and experience levels — all in one place.</p>
+  <div class="hero-search">
+    <input id="hero-kw" type="text" placeholder="Job title, keyword, or skill…"/>
+    <input id="hero-loc" type="text" placeholder="City or Remote"/>
+    <button class="btn-primary" onclick="heroSearch()">Search Jobs</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">12,400+</div><div class="stat-label">Active Jobs</div></div>
+    <div class="stat"><div class="stat-num">3,200+</div><div class="stat-label">Companies</div></div>
+    <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Satisfaction</div></div>
+    <div class="stat"><div class="stat-num">140+</div><div class="stat-label">Industries</div></div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="section-header fade-in">
+    <div class="section-tag">Hand-Picked</div>
+    <h2 class="section-title">Featured <span>Roles</span></h2>
+    <p class="section-sub">Premium opportunities from top-tier employers in Zambia.</p>
+  </div>
+  <div class="featured-grid fade-in" id="featuredGrid"></div>
+</section>
+
+<section id="quick-cats">
+  <div class="section-header fade-in">
+    <div class="section-tag">Explore</div>
+    <h2 class="section-title">Browse by <span>Category</span></h2>
+    <p class="section-sub">Jump straight into your industry.</p>
+  </div>
+  <div class="qcat-grid fade-in" id="qcatGrid"></div>
+</section>
+
+<div class="cta-banner fade-in">
+  <h2>Ready to <span>Hire Top Talent?</span></h2>
+  <p>Post your vacancy and reach thousands of qualified Zambian professionals.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-primary">Post a Job</a>
+    <a href="companies.html" class="btn-outline">View Company Profiles</a>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+<div id="modal-placeholder"></div>
+<div id="toast-placeholder"></div>
+
+<script src="js/shared.js"></script>
+<script>
+const FEATURED_DATA=[
+  {title:"VP of Engineering",company:"Nexus Systems",iconKey:"building",tags:["Leadership","Remote","Equity"],salary:"K 28,000 – K 35,000/mo",accentColor:"var(--teal)",iconBg:"rgba(40,207,200,.15)"},
+  {title:"Head of Growth",company:"LaunchPad Inc.",iconKey:"trendingUp",tags:["Marketing","Hybrid","Series B"],salary:"K 22,000 – K 27,000/mo",accentColor:"var(--gold)",iconBg:"rgba(240,168,64,.15)"},
+  {title:"Staff Backend Engineer",company:"CoreDB",iconKey:"cpu",tags:["Go / Rust","Remote","Open Source"],salary:"K 24,000 – K 30,000/mo",accentColor:"var(--rose)",iconBg:"rgba(232,93,122,.15)"},
+  {title:"Principal Product Manager",company:"Vertex Cloud",iconKey:"target",tags:["B2B SaaS","Hybrid","Stock Options"],salary:"K 25,000 – K 32,000/mo",accentColor:"var(--green)",iconBg:"rgba(52,201,127,.15)"},
+];
+document.getElementById('featuredGrid').innerHTML=FEATURED_DATA.map(f=>`
+  <div class="featured-card">
+    <div class="featured-accent" style="background:${f.accentColor}"></div>
+    <div class="feat-icon" style="background:${f.iconBg};color:${f.accentColor}">${IC[f.iconKey]||''}</div>
+    <div class="feat-title">${f.title}</div>
+    <div class="feat-company">${f.company}</div>
+    <div class="feat-tags">${f.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    <div class="feat-salary">${f.salary}</div>
+  </div>`).join('');
+
+document.getElementById('qcatGrid').innerHTML=CATEGORIES.slice(0,8).map(c=>`
+  <a href="categories.html" class="qcat-card">
+    <div class="qcat-icon" style="background:${c.iconBg};color:${c.iconColor}">${IC[c.iconKey]||''}</div>
+    <div><div class="qcat-name">${c.name}</div><div class="qcat-count">${c.count}</div></div>
+  </a>`).join('');
+
+function heroSearch(){
+  const kw=document.getElementById('hero-kw').value.trim();
+  const loc=document.getElementById('hero-loc').value.trim();
+  let url='jobs.html';
+  const params=new URLSearchParams();
+  if(kw)params.set('q',kw);
+  if(loc)params.set('loc',loc);
+  if(params.toString())url+='?'+params.toString();
+  window.location.href=url;
+}
+document.getElementById('hero-kw').addEventListener('keydown',e=>{if(e.key==='Enter')heroSearch();});
+
+renderNav('Home');
+renderFooter();
+renderModal();
+renderToast();
+initNav();
+initScrollFade();
+</script>
+</body>
+</html>

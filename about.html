@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us — JobVault Zambia</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+#about-section{background:var(--deep);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-bottom:80px;}
+.about-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:1rem;line-height:1.2;}
+.about-text h2 span{color:var(--gold);}
+.about-text p{color:var(--soft);margin-bottom:1rem;font-size:.95rem;line-height:1.8;}
+.about-visual{background:linear-gradient(135deg,var(--card),#1a2236);border:1px solid var(--border);border-radius:16px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.about-stat-card{background:var(--navy);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;}
+.about-stat-num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--teal);}
+.about-stat-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem;margin-bottom:80px;}
+.value-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;}
+.value-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.value-title{font-family:var(--serif);font-size:1.05rem;font-weight:600;margin-bottom:.5rem;}
+.value-desc{font-size:.85rem;color:var(--soft);line-height:1.7;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:transform .2s;}
+.team-card:hover{transform:translateY(-3px);}
+.team-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:0 auto 1rem;}
+.team-name{font-family:var(--serif);font-size:1rem;font-weight:600;margin-bottom:.25rem;}
+.team-role{font-size:.78rem;color:var(--muted);}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:2.5rem;}}
+@media(max-width:640px){.about-visual{grid-template-columns:1fr 1fr;}.team-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-tag">Our Story</div>
+    <h1>About <em>JobVault</em></h1>
+    <p>Built in Zambia, for Zambia — connecting professionals with opportunities that shape careers.</p>
+  </div>
+</div>
+
+<section id="about-section">
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <h2>Zambia's Most Trusted <span>Job Platform</span></h2>
+      <p>JobVault was founded in Lusaka with a simple mission: make it easier for talented Zambians to find meaningful work, and for great companies to find the people they need to grow.</p>
+      <p>We centralise job listings from across every industry, verify employer profiles, and surface the most relevant opportunities — so job seekers spend less time searching and more time building their careers.</p>
+      <p>From fresh graduates in Ndola to senior executives in Lusaka, JobVault serves professionals at every stage of their journey.</p>
+      <a href="jobs.html" class="btn-primary" style="margin-top:.5rem">Browse Open Roles</a>
+    </div>
+    <div class="about-visual">
+      <div class="about-stat-card"><div class="about-stat-num">12,400+</div><div class="about-stat-label">Active Jobs</div></div>
+      <div class="about-stat-card"><div class="about-stat-num">3,200+</div><div class="about-stat-label">Companies</div></div>
+      <div class="about-stat-card"><div class="about-stat-num">98%</div><div class="about-stat-label">Satisfaction</div></div>
+      <div class="about-stat-card"><div class="about-stat-num">140+</div><div class="about-stat-label">Industries</div></div>
+    </div>
+  </div>
+
+  <div class="section-header fade-in">
+    <div class="section-tag">What We Stand For</div>
+    <h2 class="section-title">Our Core <span>Values</span></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card fade-in">
+      <div class="value-icon" style="background:rgba(40,207,200,.12);color:var(--teal)">${'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>'}</div>
+      <div class="value-title">Trust & Transparency</div>
+      <div class="value-desc">Every listing is verified. Every company is real. We believe job seekers deserve honest information to make confident decisions.</div>
+    </div>
+    <div class="value-card fade-in">
+      <div class="value-icon" style="background:rgba(240,168,64,.12);color:var(--gold)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <div class="value-title">Inclusive Opportunity</div>
+      <div class="value-desc">We champion equal access to employment. Our platform is built for everyone — regardless of location, background, or experience level.</div>
+    </div>
+    <div class="value-card fade-in">
+      <div class="value-icon" style="background:rgba(52,201,127,.12);color:var(--green)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="value-title">Career Growth</div>
+      <div class="value-desc">Beyond job listings, we provide salary guides, career resources, and industry insights to help professionals advance at every stage.</div>
+    </div>
+    <div class="value-card fade-in">
+      <div class="value-icon" style="background:rgba(232,93,122,.12);color:var(--rose)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M8 10h.01M16 10h.01"/></svg></div>
+      <div class="value-title">Local Focus</div>
+      <div class="value-desc">We are proudly Zambian. Our platform understands the local job market, salary benchmarks, and the unique needs of Zambian professionals.</div>
+    </div>
+  </div>
+
+  <div class="section-header fade-in">
+    <div class="section-tag">The People</div>
+    <h2 class="section-title">Meet the <span>Team</span></h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(40,207,200,.15);color:var(--teal)">CM</div><div class="team-name">Chanda Mwale</div><div class="team-role">CEO & Co-Founder</div></div>
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(240,168,64,.15);color:var(--gold)">TN</div><div class="team-name">Temwani Nkonde</div><div class="team-role">CTO</div></div>
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(232,93,122,.15);color:var(--rose)">BM</div><div class="team-name">Bwalya Mutale</div><div class="team-role">Head of Design</div></div>
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(52,201,127,.15);color:var(--green)">KS</div><div class="team-name">Kunda Siame</div><div class="team-role">Head of Partnerships</div></div>
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(40,207,200,.12);color:var(--teal)">MP</div><div class="team-name">Mwansa Phiri</div><div class="team-role">Lead Engineer</div></div>
+    <div class="team-card fade-in"><div class="team-avatar" style="background:rgba(240,168,64,.12);color:var(--gold)">ZL</div><div class="team-name">Zombe Lungu</div><div class="team-role">Marketing Manager</div></div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<div id="modal-placeholder"></div>
+<div id="toast-placeholder"></div>
+<script src="js/shared.js"></script>
+<script>
+renderNav('About');renderFooter();renderModal();renderToast();initNav();initScrollFade();
+</script>
+</body>
+</html>

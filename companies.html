@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Companies — JobVault Zambia</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+#companies-section{background:var(--deep);min-height:60vh;}
+.co-card-full{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;transition:transform .2s,border-color .2s,box-shadow .2s;cursor:pointer;}
+.co-card-full:hover{transform:translateY(-4px);border-color:rgba(240,168,64,.3);box-shadow:var(--shadow);}
+.co-card-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.co-logo-lg{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;font-family:var(--serif);flex-shrink:0;}
+.co-meta h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:.2rem;}
+.co-meta .co-industry{font-size:.8rem;color:var(--muted);}
+.co-meta .co-location{font-size:.8rem;color:var(--soft);display:flex;align-items:center;gap:.3rem;margin-top:.2rem;}
+.co-desc{font-size:.85rem;color:var(--soft);line-height:1.6;margin-bottom:1.1rem;}
+.co-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:1rem;}
+.co-chips{display:flex;gap:.6rem;flex-wrap:wrap;}
+.co-chip{font-size:.72rem;background:var(--border);color:var(--soft);padding:.2rem .65rem;border-radius:4px;}
+.co-open-jobs{font-size:.85rem;font-weight:600;color:var(--teal);}
+.companies-grid-full{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;}
+@media(max-width:640px){.companies-grid-full{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-tag">Top Employers</div>
+    <h1>Hiring <em>Companies</em></h1>
+    <p>Explore organisations actively recruiting talent across Zambia and beyond.</p>
+  </div>
+</div>
+
+<section id="companies-section">
+  <div class="filter-bar">
+    <button class="filter-btn active" data-industry="all">All Industries</button>
+    <button class="filter-btn" data-industry="Software & SaaS">Software</button>
+    <button class="filter-btn" data-industry="Healthcare Tech">Healthcare</button>
+    <button class="filter-btn" data-industry="Finance & Data">Finance</button>
+    <button class="filter-btn" data-industry="Artificial Intelligence">AI</button>
+    <button class="filter-btn" data-industry="Cloud Infrastructure">Cloud</button>
+  </div>
+  <div class="companies-grid-full" id="coGrid"></div>
+</section>
+
+<footer id="site-footer"></footer>
+<div id="modal-placeholder"></div>
+<div id="toast-placeholder"></div>
+
+<script src="js/shared.js"></script>
+<script>
+let activeInd='all';
+document.querySelector('.filter-bar').addEventListener('click',e=>{
+  if(!e.target.classList.contains('filter-btn'))return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  activeInd=e.target.dataset.industry;
+  renderCos();
+});
+
+function renderCos(){
+  const list=activeInd==='all'?COMPANIES:COMPANIES.filter(c=>c.industry===activeInd);
+  document.getElementById('coGrid').innerHTML=list.map(c=>`
+    <div class="co-card-full fade-in">
+      <div class="co-card-top">
+        <div class="co-logo-lg" style="background:${c.logoBg}">${c.logo}</div>
+        <div class="co-meta">
+          <h3>${c.name}</h3>
+          <div class="co-industry">${c.industry}</div>
+          <div class="co-location">${IC.mapPin} ${c.location}</div>
+        </div>
+      </div>
+      <div class="co-desc">${c.desc}</div>
+      <div class="co-footer">
+        <div class="co-chips">
+          <span class="co-chip">Est. ${c.founded}</span>
+          <span class="co-chip">${c.employees} employees</span>
+          <span class="co-chip">${'★'.repeat(Math.floor(c.rating))} ${c.rating}</span>
+        </div>
+        <a href="jobs.html" class="co-open-jobs">${c.jobs} open roles →</a>
+      </div>
+    </div>`).join('');
+  initScrollFade();
+}
+
+renderNav('Companies');
+renderFooter();
+renderModal();
+renderToast();
+initNav();
+renderCos();
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact — JobVault Zambia</title>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+#contact-section{background:var(--deep);min-height:60vh;}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:start;}
+.contact-info-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.contact-info-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;}
+.contact-detail{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
+.contact-icon{color:var(--teal);margin-top:.1rem;flex-shrink:0;}
+.contact-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
+.contact-value{font-size:.95rem;margin-top:.1rem;}
+.contact-divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0;}
+.social-row{display:flex;gap:.75rem;}
+.contact-form-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.contact-form-wrap h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:.5rem;}
+.contact-form-wrap p{font-size:.88rem;color:var(--muted);margin-bottom:1.5rem;}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+.btn-submit{background:linear-gradient(135deg,var(--gold),#e09030);color:var(--navy);border:none;padding:.85rem;border-radius:var(--radius);font-weight:700;font-size:.95rem;transition:opacity .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;}
+.btn-submit:hover{opacity:.88;transform:translateY(-2px);}
+.faq-list{margin-top:60px;}
+.faq-item{border-bottom:1px solid var(--border);padding:1.25rem 0;}
+.faq-q{font-weight:600;font-size:.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.faq-a{font-size:.88rem;color:var(--soft);line-height:1.7;margin-top:.75rem;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);}
+.faq-chevron{transition:transform .25s;display:flex;}
+@media(max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:2rem;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="section-tag">Get In Touch</div>
+    <h1>Contact <em>Us</em></h1>
+    <p>Post a job, report an issue, or just say hello. We're here to help.</p>
+  </div>
+</div>
+
+<section id="contact-section">
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-info-card fade-in">
+        <h3>Our Details</h3>
+        <div class="contact-detail">
+          <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="contact-label">Office</div><div class="contact-value">Cairo Road, Lusaka, Zambia</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+          <div><div class="contact-label">Email</div><div class="contact-value">hello@jobvault.co.zm</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.79 19.79 19.79 0 0 1 1.61 1.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.7a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <div><div class="contact-label">Phone</div><div class="contact-value">+260 977 000 000</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="contact-label">Hours</div><div class="contact-value">Mon – Fri, 8 AM – 5 PM CAT</div></div>
+        </div>
+        <hr class="contact-divider"/>
+        <div class="contact-label" style="margin-bottom:.75rem">Follow Us</div>
+        <div class="social-row">
+          <a href="#" class="social-btn" title="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-btn" title="Twitter"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg></a>
+          <a href="#" class="social-btn" title="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" class="social-btn" title="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap fade-in">
+      <h3>Send a Message</h3>
+      <p>Fill in the form and our team will get back to you within one business day.</p>
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="Chanda" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Mwale" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="chanda@example.co.zm" required/></div>
+        <div class="form-group"><label>Phone (optional)</label><input type="tel" placeholder="+260 977 000 000"/></div>
+        <div class="form-group"><label>Subject</label>
+          <select><option>General Inquiry</option><option>Post a Job</option><option>Report an Issue</option><option>Partnership</option><option>Press</option><option>Other</option></select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea rows="5" placeholder="Tell us how we can help…" required></textarea></div>
+        <button type="submit" class="btn-submit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="faq-list fade-in" style="margin-top:60px;">
+    <div class="section-header"><div class="section-tag">FAQ</div><h2 class="section-title">Common <span>Questions</span></h2></div>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<div id="modal-placeholder"></div>
+<div id="toast-placeholder"></div>
+<script src="js/shared.js"></script>
+<script>
+const FAQS=[
+  {q:"Is JobVault free for job seekers?",a:"Yes, browsing and applying for jobs on JobVault is completely free for job seekers. We never charge candidates to access listings or submit applications."},
+  {q:"How do I post a job as an employer?",a:"Fill in the contact form above with subject 'Post a Job' and our team will reach out within one business day to set up your employer profile and listing."},
+  {q:"How often are new jobs added?",a:"New jobs are added every day. We partner with hundreds of Zambian companies who post vacancies directly through our platform."},
+  {q:"Can I apply for remote jobs from Zambia?",a:"Absolutely. Many of our listings are remote-friendly and open to candidates based anywhere in Zambia or across Africa."},
+  {q:"How do I report a suspicious listing?",a:"Use the contact form with subject 'Report an Issue' and provide the job title and company name. Our moderation team reviews all reports within 24 hours."},
+];
+document.getElementById('faqList').innerHTML=FAQS.map((f,i)=>`
+  <div class="faq-item" id="faq${i}">
+    <div class="faq-q" onclick="toggleFaq(${i})">${f.q}<span class="faq-chevron"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+    <div class="faq-a">${f.a}</div>
+  </div>`).join('');
+
+function toggleFaq(i){document.getElementById('faq'+i).classList.toggle('open');}
+function submitForm(e){e.preventDefault();e.target.reset();showToast('Message sent — we will be in touch soon!');}
+
+renderNav('Contact');renderFooter();renderModal();renderToast();initNav();initScrollFade();
+</script>
+</body>
+</html>
